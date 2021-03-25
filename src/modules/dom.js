@@ -7,6 +7,9 @@ const dom = (() => {
   const temperatureEl = document.querySelector('#temperature');
   const humidityEl = document.querySelector('#humidity');
   const iconEl = document.querySelector('#weather-icon');
+  const img = document.createElement('img');
+  const errorEl = document.querySelector('.error');
+  iconEl.appendChild(img);
   return {
     input,
     form,
@@ -16,6 +19,7 @@ const dom = (() => {
     temperatureEl,
     humidityEl,
     iconEl,
+    errorEl,
   };
 })();
 

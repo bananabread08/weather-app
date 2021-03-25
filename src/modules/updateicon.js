@@ -2,19 +2,14 @@ import dom from './dom';
 
 export default function updateIcon(weatherType) {
   if (weatherType === 'Clouds') {
-    dom.iconEl.innerHTML = '<i class="fas fa-cloud"></i>';
-    // bg: '#4c94fb ' };
+    dom.iconEl.firstChild.src = 'assets/cloudy.svg';
   } else if (weatherType === 'Rain') {
-    dom.iconEl.innerHTML = '<i class="fas fa-cloud-rain"></i>';
+    dom.iconEl.firstChild.src = 'assets/rain.svg';
   } else if (weatherType === 'Clear') {
-    dom.iconEl.innerHTML = '<i class="fas fa-sun"></i>';
+    dom.iconEl.firstChild.src = 'assets/clear-day.svg';
   } else if (weatherType === 'Mist') {
-    dom.iconEl.innerHTML = '<i class="fas fa-smog"></i>';
+    dom.iconEl.firstChild.src = 'assets/mist.svg';
   } else if (weatherType === 'Snow') {
-    dom.iconEl.innerHTML = '<i class="far fa-snowflake"></i>';
+    dom.iconEl.firstChild.src = 'asset/snow.svg';
   }
-  // bg: '#39629e' };
-  // bg: '#e1e3cf' };
-  // bg: '#7cc7d9' };
-  // bg: '#5c7494 ' };
 }

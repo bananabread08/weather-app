@@ -17,3 +17,6 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+.data-container > p > i {
+    scale: 4;
+}

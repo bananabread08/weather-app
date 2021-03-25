@@ -1,22 +1,45 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 html, body {
     margin: 0;
     padding: 0;
     background-color: #c9ced3;
+    font-family: 'Poppins',sans-serif;
 }
 * {
     box-sizing: border-box;
 }
 .form-container{
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding-bottom: 30px;
+}
+#submit{
+    cursor: pointer;
+}
+.error{
+    position: absolute;
+    top: 30px;
+    color: red;
+    visibility: hidden;
 }
 .data-container{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 400px;
+    background-color: rgb(15, 165, 165);
+    border-radius: 10px;
 }
-.data-container > p > i {
-    scale: 4;
+.data-container > p > img {
+    width: 150px;
+    height: 150px;
+}
+sup {
+    color: rgb(172, 64, 64);
 }

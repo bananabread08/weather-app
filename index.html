@@ -11,18 +11,17 @@
 <body>
     <div class="form-container">
         <form>
-            <input type="text"  id="search-item">
+            <input type="text"  id="search-item" placeholder="Seach a City or a Country...">
             <input type="submit" id="submit" value="search">
         </form>
+        <small class="error">Location not found. Try again.</small>
     </div>
     <div class="data-container">
+        <p id="weather-icon" name='icon'></p>
         <h1 id="location"></h1>
-        <p id="weather-icon"></p>
-        <!-- <p id="weather"></p> -->
         <p id ="description"></p>
         <p id="temperature"></p>
         <p id="humidity"></p>
-        
     </div>
     <script src="main.js"></script>
 </body>

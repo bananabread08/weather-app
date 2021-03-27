@@ -9,19 +9,24 @@
     <script src="https://kit.fontawesome.com/dbf95a1966.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="form-container">
-        <form>
-            <input type="text"  id="search-item" placeholder="Seach a City or a Country...">
-            <input type="submit" id="submit" value="search">
-        </form>
-        <small class="error">Location not found. Try again.</small>
-    </div>
-    <div class="data-container">
-        <p id="weather-icon" name='icon'></p>
-        <h1 id="location"></h1>
-        <p id ="description"></p>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
+    <div class="main-container">
+        <div class="form-container">
+            <h2>Simple Weather App</h2>
+            <form>
+                <input type="text"  id="search-item" placeholder="Seach a City or a Country...">
+                <button type="submit" id="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <small class="error">Location not found. Try again.</small>
+        </div>
+        <div class="data-container">
+            <p id="weather-icon" name='icon'></p>
+            <div class="data-contents">
+                <h1 id="location"></h1>
+                <p id ="description"></p>
+                <p id="temperature"></p>
+                <p id="humidity"></p>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

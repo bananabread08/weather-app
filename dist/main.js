@@ -30,13 +30,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/modules/convertunits.js":
+/*!*************************************!*\
+  !*** ./src/modules/convertunits.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ convertUnits)\n/* harmony export */ });\nfunction convertUnits(temperature) {\n  const temp = temperature - 273.15;\n  return temp.toFixed(1);\n}\n\n\n//# sourceURL=webpack://weather-app/./src/modules/convertunits.js?");
+
+/***/ }),
+
 /***/ "./src/modules/displaycontroller.js":
 /*!******************************************!*\
   !*** ./src/modules/displaycontroller.js ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayController)\n/* harmony export */ });\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/modules/dom.js\");\n/* harmony import */ var _updateicon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./updateicon */ \"./src/modules/updateicon.js\");\n\n\n\nfunction displayController(data) {\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.errorEl.style.visibility = 'hidden';\n  (0,_updateicon__WEBPACK_IMPORTED_MODULE_1__.default)(data.weather);\n  if (data.countryCode === undefined) {\n    _dom__WEBPACK_IMPORTED_MODULE_0__.default.locationEl.innerHTML = `${data.location}`;\n  } else {\n    _dom__WEBPACK_IMPORTED_MODULE_0__.default.locationEl.innerHTML = `${data.location}, ${data.countryCode}`;\n  }\n  // dom.weatherEl.textContent = data.weather;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.descriptionEl.textContent = data.description;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.temperatureEl.textContent = `Temperature: ${data.temperature} °K`;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.humidityEl.textContent = `Humidity: ${data.humidity}%`;\n}\n\n\n//# sourceURL=webpack://weather-app/./src/modules/displaycontroller.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayController)\n/* harmony export */ });\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/modules/dom.js\");\n/* harmony import */ var _updateicon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./updateicon */ \"./src/modules/updateicon.js\");\n/* harmony import */ var _convertunits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./convertunits */ \"./src/modules/convertunits.js\");\n\n\n\n\nfunction displayController(data) {\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.errorEl.style.visibility = 'hidden';\n  (0,_updateicon__WEBPACK_IMPORTED_MODULE_1__.default)(data.weather);\n  const convertedTemp = (0,_convertunits__WEBPACK_IMPORTED_MODULE_2__.default)(data.temperature);\n  if (data.countryCode === undefined) {\n    _dom__WEBPACK_IMPORTED_MODULE_0__.default.locationEl.innerHTML = `${data.location}`;\n  } else {\n    _dom__WEBPACK_IMPORTED_MODULE_0__.default.locationEl.innerHTML = `${data.location}, ${data.countryCode}`;\n  }\n  // dom.weatherEl.textContent = data.weather;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.descriptionEl.textContent = data.description;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.temperatureEl.innerHTML = `<img src=\"assets/thermometer.svg\" alt=\"temperature\"> :  ${convertedTemp}°C`;\n  _dom__WEBPACK_IMPORTED_MODULE_0__.default.humidityEl.innerHTML = `<img src=\"assets/droplet.svg\"> :  ${data.humidity}%`;\n}\n\n\n//# sourceURL=webpack://weather-app/./src/modules/displaycontroller.js?");
 
 /***/ }),
 

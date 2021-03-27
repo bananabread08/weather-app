@@ -1,4 +1,4 @@
-#Project: Weather App
+# Project: Weather App
 The Weather App project for The Odin Project's Javascript track/curriculum. 
 
 ## Features
@@ -15,6 +15,8 @@ The Weather App project for The Odin Project's Javascript track/curriculum.
 ## Usage
 1. Clone the Repository.
 2. Generate an API Key from [Openweather API](https://openweathermap.org/). Free as long as you make an account.
-3. Open Terminal. 
-4. Install Webpack. `npm install webpack webpack-cli --save-dev`
-5. Run Webpack. `npm run build`.
+3. Open the `apikey.js` file from `src/modules`. Paste your API key inside the single quotes. 
+4. Open Terminal. 
+5. Install Webpack. Enter `npm install webpack webpack-cli --save-dev`.
+6. Run Webpack. Enter `npm run build`.
+7. Open `index.html` from `dist` folder. Search your country!

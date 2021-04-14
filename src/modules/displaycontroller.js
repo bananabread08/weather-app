@@ -1,6 +1,8 @@
 import dom from './dom';
 import updateIcon from './updateicon';
 import convertUnits from './convertunits';
+import Thermometer from '../assets/thermometer.svg';
+import Droplet from '../assets/droplet.svg';
 
 export default function displayController(data) {
   dom.errorEl.style.visibility = 'hidden';
@@ -13,6 +15,6 @@ export default function displayController(data) {
   }
   // dom.weatherEl.textContent = data.weather;
   dom.descriptionEl.textContent = data.description;
-  dom.temperatureEl.innerHTML = `<img src="assets/thermometer.svg" alt="temperature"> :  ${convertedTemp}°C`;
-  dom.humidityEl.innerHTML = `<img src="assets/droplet.svg"> :  ${data.humidity}%`;
+  dom.temperatureEl.innerHTML = `<img src="${Thermometer}" alt="temperature"> :  ${convertedTemp}°C`;
+  dom.humidityEl.innerHTML = `<img src="${Droplet}"> :  ${data.humidity}%`;
 }

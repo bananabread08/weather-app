@@ -9,7 +9,7 @@ export default function displayController(data) {
   if (data.countryCode === undefined) {
     dom.locationEl.innerHTML = `${data.location}`;
   } else {
-    dom.locationEl.innerHTML = `${data.location}, ${data.countryCode}`;
+    dom.locationEl.innerHTML = `${data.location}, ${data.countryCode} <img src="http://openweathermap.org/images/flags/${data.countryCode.toLowerCase()}.png"/>`;
   }
   // dom.weatherEl.textContent = data.weather;
   dom.descriptionEl.textContent = data.description;

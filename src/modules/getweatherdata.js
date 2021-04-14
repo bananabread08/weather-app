@@ -18,7 +18,7 @@ export default async function getWeatherData(location) {
       humidity: data.main.humidity,
     };
     displayController(pickedData);
-  } catch (error) { // don't mind this errorfor now
+  } catch (error) {
     dom.errorEl.style.visibility = 'visible';
   }
 }

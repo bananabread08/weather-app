@@ -2,6 +2,8 @@
 
 The Weather App project for The Odin Project's Javascript track/curriculum.
 
+[Live Preview here!](https://bananabread08.github.io/weather-app/)
+
 ## Overview
 
 A Weather Web App made with VanillaJS and initially apply what I learned about Async JS and how to work with APIs via 'fetch'.

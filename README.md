@@ -1,22 +1,43 @@
-# Project: Weather App
-The Weather App project for The Odin Project's Javascript track/curriculum. 
+# Weather App
 
-## Features
-* Fetch a location's (city/country) weather data using [Openweather API](https://openweathermap.org/).
-* Display Current Weather, Temperature, and  Humidity.
-* Will update for more features like Unit Conversion and Time.
+The Weather App project for The Odin Project's Javascript track/curriculum.
 
-## Resources
-* [Openweather API](https://openweathermap.org/)
-* The lovely animeted icons from [Bas](https://bas.dev/). Check his site!
-* Webpack
-* The Odin Project's Discord. 
+## Overview
 
-## Usage
-1. Clone the Repository.
+A Weather Web App made with VanillaJS and initially apply what I learned about Async JS and how to work with APIs via 'fetch'.
+
+## Features & Functionality
+
+- Fetch a location's (city/country) weather data using [Openweather API](https://openweathermap.org/).
+- Display Current Weather, Temperature, and Humidity.
+- Display Error if Location is not valid.
+- Will update for more features like Unit Conversion and Time.
+
+## Objectives & Outcomes
+
+Previous lesson is about Async JS and APIs. Learned about Async and Await and how to apply them in a real world Web Application such as this app. Fetching Data from APIs is probably one the best experience I had in this journey.
+
+## Development
+
+Made with VanillaJS with Webpack as bundler. Got to work with APIs and learn how to fetch data from them.
+
+Built With:
+
+- HTML + CSS
+- JavaScript
+- eslint + prettier
+- Webpack
+- [Openweather API](https://openweathermap.org/)
+- The lovely animeted icons from [Bas](https://bas.dev/). Check his site!
+- The Odin Project's Discord.
+
+# Usage / Running Project Locally
+
+1. Clone the Repository (`git clone ...`).
 2. Generate an API Key from [Openweather API](https://openweathermap.org/). Free as long as you make an account.
-3. Open the `apikey.js` file from `src/modules`. Paste your API key inside the single quotes. 
-4. Open Terminal. 
-5. Install Webpack. Enter `npm install webpack webpack-cli --save-dev`.
-6. Run Webpack. Enter `npm run build`.
-7. Open `index.html` from `dist` folder. Search your country!
+3. Open the `apikey.js` file from `src/modules`. Paste your API key inside the single quotes.
+4. `npm install` on Project Directory.
+5. `npm run build` to run Webpack.
+6. Open the `index.html` to your preferred browser.
+
+Future Update: Polishing the UI/UX.

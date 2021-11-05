@@ -1,11 +1,14 @@
 import retrieveApiKey from './apikey';
-import displayController from './displaycontroller';
-import dom from './dom';
+//import displayController from './displaycontroller';
+//import dom from './dom';
 
 export default async function getWeatherData(location) {
   try {
     const API_KEY = retrieveApiKey();
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`, { mode: 'cors' });
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`,
+      { mode: 'cors' }
+    );
     const data = await response.json();
     console.log(data);
     // console.log(data.sys.country);

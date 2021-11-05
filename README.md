@@ -30,7 +30,7 @@ Built With:
 - eslint + prettier
 - Webpack
 - [Openweather API](https://openweathermap.org/)
-- The lovely animeted icons from [Bas](https://bas.dev/). Check his site!
+- The lovely animated icons from [Bas](https://bas.dev/). Check his site!
 - The Odin Project's Discord.
 
 # Usage / Running Project Locally
@@ -39,7 +39,8 @@ Built With:
 2. Generate an API Key from [Openweather API](https://openweathermap.org/). Free as long as you make an account.
 3. Open the `apikey.js` file from `src/modules`. Paste your API key inside the single quotes.
 4. `npm install` on Project Directory.
-5. `npm run build` to run Webpack.
+5. `npm install webpack-cli --save-dev` to install Webpack.
+   6 `npx webpack` to run Webpack to update `main.js`
 6. Open the `index.html` to your preferred browser.
 
 Future Update: Polishing the UI/UX.

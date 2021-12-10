@@ -4,8 +4,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-image: url('../assets/background.png');
-  /* background-color: #c9ced3; */
+  /* background-image: url('../assets/background.png'); */
   font-family: 'Poppins', sans-serif;
   height: 100%;
 }
@@ -20,16 +19,9 @@ body {
   color: white;
 }
 .form-container {
-  display: flex;
-  flex-direction: column;
-  flex: 40%;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 }
-form {
-  margin-left: -50px;
-  position: relative;
-}
+
 #search-item {
   width: 100%;
   border: 3px solid #00b4cc;
@@ -56,7 +48,7 @@ form {
   font-size: 20px;
   position: absolute;
 }
-.error {
+/* .error {
   margin-left: -20px;
   color: #f71515;
   border-radius: 5px;
@@ -64,7 +56,7 @@ form {
   visibility: hidden;
   transition: all 0.8s ease;
   font-size: 20px;
-}
+} */
 
 /* @media (max-width: 768px){
     .main-container{

@@ -29,7 +29,6 @@ async function getCoords(location) {
     };
   } catch (error) {
     console.log(error);
-    //dom.errorEl.style.visibility = 'visible';
   }
 }
 

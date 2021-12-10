@@ -66,7 +66,17 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_getweatherdata__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/getweatherdata */ \"./src/modules/getweatherdata.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.css */ \"./src/styles/style.css\");\n/* harmony import */ var _assets_background_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/background.png */ \"./src/assets/background.png\");\n\n//import dom from './modules/dom';\n\n\n\n(0,_modules_getweatherdata__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('Philippines');\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_apiFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/apiFunctions */ \"./src/modules/apiFunctions.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.css */ \"./src/styles/style.css\");\n/* harmony import */ var _assets_background_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/background.png */ \"./src/assets/background.png\");\n\n//import dom from './modules/dom';\n\n\n\nconst form = document.querySelector('form');\nconst input = document.querySelector('#search-item');\n\nasync function getWeatherData(location) {\n  try {\n    const main_data = await _modules_apiFunctions__WEBPACK_IMPORTED_MODULE_0__.getCoords(location);\n    console.log(main_data);\n    const forecast = await _modules_apiFunctions__WEBPACK_IMPORTED_MODULE_0__.getForecast(\n      main_data.coord.lon,\n      main_data.coord.lat\n    );\n    console.log(forecast);\n  } catch (error) {\n    console.log(error);\n  }\n}\n\ngetWeatherData('Batac');\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n  getWeatherData(input.value);\n  form.reset();\n});\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/apiFunctions.js":
+/*!*************************************!*\
+  !*** ./src/modules/apiFunctions.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCoords\": () => (/* binding */ getCoords),\n/* harmony export */   \"getForecast\": () => (/* binding */ getForecast)\n/* harmony export */ });\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/modules/apikey.js\");\n\n\nasync function getForecast(lon, lat) {\n  try {\n    const API_KEY = (0,_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${API_KEY}`,\n      { mode: 'cors' }\n    );\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.log(error);\n  }\n}\n\nasync function getCoords(location) {\n  try {\n    const API_KEY = (0,_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`,\n      { mode: 'cors' }\n    );\n    const data = await response.json();\n    return {\n      coord: data.coord,\n      city: data.name,\n      country: data.sys.country,\n    };\n  } catch (error) {\n    console.log(error);\n    //dom.errorEl.style.visibility = 'visible';\n  }\n}\n\n\n\n\n//# sourceURL=webpack://weather-app/./src/modules/apiFunctions.js?");
 
 /***/ }),
 
@@ -77,16 +87,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ retrieveApiKey)\n/* harmony export */ });\nfunction retrieveApiKey() {\n  return '568d16f8e8cf2516ecd7cf2bd2689610';\n}\n\n\n//# sourceURL=webpack://weather-app/./src/modules/apikey.js?");
-
-/***/ }),
-
-/***/ "./src/modules/getweatherdata.js":
-/*!***************************************!*\
-  !*** ./src/modules/getweatherdata.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getWeatherData)\n/* harmony export */ });\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/modules/apikey.js\");\n\n\nasync function getForecast(lon, lat) {\n  try {\n    const API_KEY = (0,_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${API_KEY}`,\n      { mode: 'cors' }\n    );\n    const data = await response.json();\n    console.log(data);\n  } catch (error) {\n    console.log(error);\n    //dom.errorEl.style.visibility = 'visible';\n  }\n}\n\nasync function getWeatherData(location) {\n  try {\n    const API_KEY = (0,_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const response = await fetch(\n      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`,\n      { mode: 'cors' }\n    );\n    const data = await response.json();\n    const { lon, lat } = data.coord;\n    getForecast(lon, lat);\n  } catch (error) {\n    console.log(error);\n    //dom.errorEl.style.visibility = 'visible';\n  }\n}\n\n\n//# sourceURL=webpack://weather-app/./src/modules/getweatherdata.js?");
 
 /***/ }),
 

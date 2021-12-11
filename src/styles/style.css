@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-html {
+html,
+body {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -11,12 +12,11 @@ html {
   box-sizing: inherit;
 }
 
-header {
+body {
   display: flex;
-}
-
-.form-container {
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #search-item {
@@ -57,13 +57,22 @@ header {
   transition: all 0.8s ease;
   font-size: 20px;
 }
-#weather-icon > img {
+.weather-icon > img {
   max-width: 200px;
 }
 .forecast {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+}
+.forecast-box {
+  min-height: 100px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px black solid;
 }
 
 /* @media (max-width: 768px){

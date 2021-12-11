@@ -11,7 +11,7 @@
     ></script>
   </head>
   <body>
-    <div class="main-container">
+    <header>
       <div class="form-container">
         <h2>Simple Weather App</h2>
         <form>
@@ -24,9 +24,19 @@
             <i class="fa fa-search"></i>
           </button>
         </form>
-        <!-- <small class="error">Location not found. Try again.</small> -->
+        <small class="error">Location not found. Try again.</small>
       </div>
+    </header>
+    <div class="data-container">
+      <p id="weather-icon" name="icon"></p>
+      <div class="city"></div>
+      <div class="country"></div>
+      <div class="temperature">Temperature(K):</div>
+      <div class="humidity">Humidity(%):</div>
+      <div class="wind-speed">Wind Speed(m/s):</div>
     </div>
+    <div class="forecast"></div>
+
     <script src="main.js"></script>
   </body>
 </html>

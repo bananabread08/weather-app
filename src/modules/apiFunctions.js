@@ -1,8 +1,7 @@
-import retrieveApiKey from './apikey';
+const API_KEY = '568d16f8e8cf2516ecd7cf2bd2689610';
 
 async function getForecast(lon, lat) {
   try {
-    const API_KEY = retrieveApiKey();
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${API_KEY}`,
       { mode: 'cors' }
@@ -16,7 +15,6 @@ async function getForecast(lon, lat) {
 
 async function getCoords(location) {
   try {
-    const API_KEY = retrieveApiKey();
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`,
       { mode: 'cors' }

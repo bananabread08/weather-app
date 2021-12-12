@@ -57,8 +57,12 @@ body {
   transition: all 0.8s ease;
   font-size: 20px;
 }
+.data-container {
+  text-align: center;
+}
 .weather-icon > img {
-  max-width: 200px;
+  min-width: 200px;
+  min-height: 150px;
 }
 .forecast {
   display: flex;

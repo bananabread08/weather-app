@@ -37,9 +37,9 @@ export default function updateUI(main_data, forecast, errorEl) {
   iconEl.append(img);
   city.textContent = main_data.city;
   country.textContent = main_data.country;
-  temperature.textContent += forecast.current.feels_like;
-  humidity.textContent += forecast.current.humidity;
-  wind_speed.textContent += forecast.current.wind_speed;
+  temperature.textContent = forecast.current.feels_like;
+  humidity.textContent = forecast.current.humidity;
+  wind_speed.textContent = forecast.current.wind_speed;
   updateIcon(iconEl, forecast.current.weather[0].main);
   removeExistingElements(forecastEl);
   // when searching a new location, new boxes are appended.

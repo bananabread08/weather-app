@@ -18,6 +18,12 @@ const updateIcon = (element, weatherType) => {
   }
 };
 
+const removeExistingElements = (element) => {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+};
+
 export default function updateUI(main_data, forecast, errorEl) {
   errorEl.style.visibility = 'hidden';
   const city = document.querySelector('.city');
@@ -35,7 +41,8 @@ export default function updateUI(main_data, forecast, errorEl) {
   humidity.textContent += forecast.current.humidity;
   wind_speed.textContent += forecast.current.wind_speed;
   updateIcon(iconEl, forecast.current.weather[0].main);
-
+  removeExistingElements(forecastEl);
+  // when searching a new location, new boxes are appended.
   for (let count = 0; count <= 5; count++) {
     const div = document.createElement('div');
     div.classList.add('forecast-box');

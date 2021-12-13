@@ -18,6 +18,7 @@ const updateIcon = (element, weatherType) => {
   }
 };
 
+// helper to remove previously searched Forecast elements
 const removeExistingElements = (element) => {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
@@ -34,14 +35,16 @@ export default function updateUI(main_data, forecast, errorEl) {
   const wind_speed = document.querySelector('.wind-speed');
   const img = document.createElement('img');
   const forecastEl = document.querySelector('.forecast');
+  removeExistingElements(iconEl);
+  removeExistingElements(forecastEl);
   iconEl.append(img);
   city.textContent = main_data.city;
   country.textContent = main_data.country;
-  temperature.textContent = forecast.current.feels_like;
+  temperature.textContent = forecast.current.temp;
   humidity.textContent = forecast.current.humidity;
   wind_speed.textContent = forecast.current.wind_speed;
   updateIcon(iconEl, forecast.current.weather[0].main);
-  removeExistingElements(forecastEl);
+
   // when searching a new location, new boxes are appended.
   for (let count = 0; count <= 5; count++) {
     const div = document.createElement('div');

@@ -9,6 +9,8 @@ const errorEl = document.querySelector('.error');
 
 async function getWeatherData(location) {
   try {
+    //let loader = `<div class="boxLoading">Loading...</div>`;
+    //document.getElementById('movieResult').innerHTML = loader;
     const main_data = await apiFxns.getCoords(location);
     console.log(main_data);
     const forecast = await apiFxns.getForecast(

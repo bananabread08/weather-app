@@ -63,6 +63,8 @@ body {
 }
 .data-container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .weather-icon > img {
   min-width: 200px;
@@ -75,12 +77,19 @@ body {
   gap: 20px;
 }
 .forecast-box {
-  min-height: 100px;
-  min-width: 100px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px black solid;
+  background-color: #fff;
+  border: 4px solid #ccc;
+  box-shadow: inset 0 0 0 4px #eee;
+  /* And so on and so forth, if you want border-ception */
+  margin: 0 auto;
+  position: relative;
+}
+.forecast-box img {
+  min-height: 100px;
+  min-width: 100px;
 }
 
 /* @media (max-width: 768px){

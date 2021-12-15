@@ -19,6 +19,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #15155c;
+  color: #fff;
+  text-align: center;
 }
 
 #search-item {
@@ -63,11 +66,29 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
   color: #00b4cc;
+  transition: all 0.8s ease;
 }
 .data-container {
-  text-align: center;
+  display: flex;
+  gap: 50px;
+}
+.primary-data,
+.secondary-data {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.city,
+.country {
+  position: absolute;
+}
+.city {
+  top: 20px;
+  right: 40px;
+}
+.country {
+  top: 50px;
+  right: 40px;
 }
 .temperature,
 .humidity,
@@ -81,15 +102,15 @@ body {
   max-width: 70px;
   max-height: 70px;
 }
-.weather-icon > img {
-  min-width: 200px;
-  min-height: 150px;
+.weather-icon img {
+  min-width: 300px;
 }
 .forecast {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  color: #151922;
 }
 .forecast-box {
   display: flex;
@@ -101,10 +122,11 @@ body {
   /* And so on and so forth, if you want border-ception */
   margin: 0 auto;
   position: relative;
+  border-radius: 3em 3em;
 }
 .forecast-box img {
-  min-height: 100px;
-  min-width: 100px;
+  min-height: 150px;
+  min-width: 150px;
 }
 
 /* @media (max-width: 768px){

@@ -31,14 +31,19 @@ const removeExistingElements = (element) => {
 const createElements = (main_data, forecast, mode) => {
   if (mode) {
     const dataEl = document.querySelector('.data-container');
-    const city = document.createElement('div');
+
+    const primaryEl = document.createElement('div');
+    primaryEl.classList.add('primary-data');
+    const secondaryEl = document.createElement('div');
+    secondaryEl.classList.add('secondary-data');
+
+    const city = document.createElement('h1');
     city.classList.add('city');
-    const country = document.createElement('div');
+    const country = document.createElement('h1');
     country.classList.add('country');
     const iconEl = document.createElement('p');
     iconEl.classList.add('weather-icon');
     const img = document.createElement('img');
-
     //temperature
     const temperatureCont = document.createElement('div');
     temperatureCont.classList.add('temperature');
@@ -66,19 +71,14 @@ const createElements = (main_data, forecast, mode) => {
     removeExistingElements(dataEl);
     removeExistingElements(iconEl);
     iconEl.append(img);
+    primaryEl.append(city, country, iconEl);
+    secondaryEl.append(temperatureCont, humidityCont, windSpeedCont);
     city.textContent = main_data.city;
     country.textContent = main_data.country;
     tempLabel.textContent = forecast.current.temp + ' K';
     humidityLabel.textContent = forecast.current.humidity + '%';
     windSpeedLabel.textContent = forecast.current.wind_speed + ' mph';
-    dataEl.append(
-      city,
-      country,
-      iconEl,
-      temperatureCont,
-      humidityCont,
-      windSpeedCont
-    );
+    dataEl.append(primaryEl, secondaryEl);
     updateIcon(iconEl, forecast.current.weather[0].main);
   } else {
     const forecastEl = document.querySelector('.forecast');
@@ -93,9 +93,9 @@ const createElements = (main_data, forecast, mode) => {
       const newImg = document.createElement('img');
       newImg.classList.add('weather-icon');
       newIconEl.append(newImg);
-      newTemperature.textContent = forecast.daily[count].feels_like.day;
-      newHumidity.textContent = forecast.daily[count].humidity;
-      newWindSpeed.textContent = forecast.daily[count].wind_speed;
+      newTemperature.textContent = forecast.daily[count].feels_like.day + ' K';
+      newHumidity.textContent = forecast.daily[count].humidity + '%';
+      newWindSpeed.textContent = forecast.daily[count].wind_speed + ' mph';
       updateIcon(newIconEl, forecast.daily[count].weather[0].main);
       div.append(newIconEl, newTemperature, newHumidity, newWindSpeed);
       forecastEl.append(div);

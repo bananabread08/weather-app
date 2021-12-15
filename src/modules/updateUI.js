@@ -5,7 +5,7 @@ import Mist from '../assets/mist.svg';
 import Snow from '../assets/snow.svg';
 import Thermometer from '../assets/thermometer.svg';
 import Droplet from '../assets/droplet.svg';
-import Wind from '../assets/droplet.svg';
+import Windsock from '../assets/windsock.svg';
 const updateIcon = (element, weatherType) => {
   if (weatherType === 'Clouds') {
     element.firstChild.src = Cloudy;
@@ -38,24 +38,47 @@ const createElements = (main_data, forecast, mode) => {
     const iconEl = document.createElement('p');
     iconEl.classList.add('weather-icon');
     const img = document.createElement('img');
-    const temperature = document.createElement('div');
-    temperature.classList.add('temperature');
-    // const tempImg = document.createElement('img');
-    // tempImg.src = Thermometer;
-    // temperature.append(tempImg);
-    const humidity = document.createElement('div');
-    humidity.classList.add('humidity');
-    const windSpeed = document.createElement('div');
-    windSpeed.classList.add('wind-speed');
+
+    //temperature
+    const temperatureCont = document.createElement('div');
+    temperatureCont.classList.add('temperature');
+    const tempLabel = document.createElement('h2');
+    const tempImg = document.createElement('img');
+    tempImg.src = Thermometer;
+    temperatureCont.append(tempImg, tempLabel);
+
+    //humidity
+    const humidityCont = document.createElement('div');
+    humidityCont.classList.add('humidity');
+    const humidityLabel = document.createElement('h2');
+    const humidityImg = document.createElement('img');
+    humidityImg.src = Droplet;
+    humidityCont.append(humidityImg, humidityLabel);
+
+    //windspeed
+    const windSpeedCont = document.createElement('div');
+    windSpeedCont.classList.add('wind-speed');
+    const windSpeedLabel = document.createElement('h2');
+    const windSpeedImg = document.createElement('img');
+    windSpeedImg.src = Windsock;
+    windSpeedCont.append(windSpeedImg, windSpeedLabel);
+
     removeExistingElements(dataEl);
     removeExistingElements(iconEl);
     iconEl.append(img);
     city.textContent = main_data.city;
     country.textContent = main_data.country;
-    temperature.textContent = forecast.current.temp;
-    humidity.textContent = forecast.current.humidity;
-    windSpeed.textContent = forecast.current.windSpeed;
-    dataEl.append(city, country, iconEl, temperature, humidity, windSpeed);
+    tempLabel.textContent = forecast.current.temp + ' K';
+    humidityLabel.textContent = forecast.current.humidity + '%';
+    windSpeedLabel.textContent = forecast.current.wind_speed + ' mph';
+    dataEl.append(
+      city,
+      country,
+      iconEl,
+      temperatureCont,
+      humidityCont,
+      windSpeedCont
+    );
     updateIcon(iconEl, forecast.current.weather[0].main);
   } else {
     const forecastEl = document.querySelector('.forecast');
@@ -72,7 +95,7 @@ const createElements = (main_data, forecast, mode) => {
       newIconEl.append(newImg);
       newTemperature.textContent = forecast.daily[count].feels_like.day;
       newHumidity.textContent = forecast.daily[count].humidity;
-      newWindSpeed.textContent = forecast.daily[count].windSpeed;
+      newWindSpeed.textContent = forecast.daily[count].wind_speed;
       updateIcon(newIconEl, forecast.daily[count].weather[0].main);
       div.append(newIconEl, newTemperature, newHumidity, newWindSpeed);
       forecastEl.append(div);

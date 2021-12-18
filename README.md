@@ -1,6 +1,6 @@
 # Weather App
 
-The Weather App project for The Odin Project's Javascript track/curriculum.
+The Weather App project for The Odin Project's Javascript track/curriculum. Version 2 (now with next 6 days Forecast).
 
 [Live Preview here!](https://bananabread08.github.io/weather-app/)
 
@@ -40,7 +40,5 @@ Built With:
 3. Open the `apikey.js` file from `src/modules`. Paste your API key inside the single quotes.
 4. `npm install` on Project Directory.
 5. `npm install webpack-cli --save-dev` to install Webpack.
-   6 `npx webpack` to run Webpack to update `main.js`
-6. Open the `index.html` to your preferred browser.
-
-Future Update: Polishing the UI/UX.
+6. `npx webpack` to run Webpack to update `main.js`
+7. Open the `index.html` to your preferred browser.

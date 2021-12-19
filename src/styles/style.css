@@ -54,12 +54,12 @@ body {
   color: black;
 }
 .error {
-  margin-left: -20px;
+  margin-left: 25px;
   color: #f71515;
   border-radius: 5px;
-  background-color: rgba(218, 205, 205, 0.514);
+  /* background-color: rgba(218, 205, 205, 0.514); */
   visibility: hidden;
-  transition: all 0.8s ease;
+  /* transition: all 0.3s ease; */
   font-size: 20px;
 }
 .loader {

@@ -77,7 +77,7 @@ const createElements = (main_data, forecast, mode) => {
     country.textContent = main_data.country;
     tempLabel.textContent = forecast.current.temp + ' K';
     humidityLabel.textContent = forecast.current.humidity + '%';
-    windSpeedLabel.textContent = forecast.current.wind_speed + ' mph';
+    windSpeedLabel.textContent = forecast.current.wind_speed + ' kph';
     dataEl.append(primaryEl, secondaryEl);
     updateIcon(iconEl, forecast.current.weather[0].main);
   } else {
@@ -95,7 +95,7 @@ const createElements = (main_data, forecast, mode) => {
       newIconEl.append(newImg);
       newTemperature.textContent = forecast.daily[count].feels_like.day + ' K';
       newHumidity.textContent = forecast.daily[count].humidity + '%';
-      newWindSpeed.textContent = forecast.daily[count].wind_speed + ' mph';
+      newWindSpeed.textContent = forecast.daily[count].wind_speed + ' kph';
       updateIcon(newIconEl, forecast.daily[count].weather[0].main);
       div.append(newIconEl, newTemperature, newHumidity, newWindSpeed);
       forecastEl.append(div);

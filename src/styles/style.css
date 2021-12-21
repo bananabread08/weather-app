@@ -139,7 +139,7 @@ h2 {
   min-height: 150px;
   min-width: 150px;
 }
-.footer {
+/* .footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -155,11 +155,13 @@ h2 {
 }
 .footer a:hover {
   color: #00b4cc;
-}
+} */
 
 @media (max-width: 768px) {
   body {
-    height: 100vh;
+    height: 100%;
+    margin: auto;
+    padding: 0;
   }
   .form-container {
     margin-left: -30px;
@@ -210,7 +212,7 @@ h2 {
     justify-content: unset;
     overflow-x: auto;
     flex-wrap: nowrap;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   .forecast .loader {
     margin: 0 auto;
@@ -218,8 +220,20 @@ h2 {
   .forecast-box {
     flex: 0 0 auto;
   }
+}
+
+@media (max-height: 568px) {
+  .forecast {
+    margin: auto;
+  }
   .forecast-box img {
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 90px;
+    min-width: 90px;
+  }
+}
+
+@media (max-height: 731px) {
+  .forecast {
+    margin-bottom: 10px;
   }
 }

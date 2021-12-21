@@ -5,7 +5,7 @@ import Mist from '../assets/mist.svg';
 import Snow from '../assets/snow.svg';
 import Thermometer from '../assets/thermometer.svg';
 import Droplet from '../assets/droplet.svg';
-import Windsock from '../assets/windsock.svg';
+import Wind from '../assets/wind.svg';
 const updateIcon = (element, weatherType) => {
   if (weatherType === 'Clouds') {
     element.firstChild.src = Cloudy;
@@ -65,7 +65,7 @@ const createElements = (main_data, forecast, mode) => {
     windSpeedCont.classList.add('wind-speed');
     const windSpeedLabel = document.createElement('h2');
     const windSpeedImg = document.createElement('img');
-    windSpeedImg.src = Windsock;
+    windSpeedImg.src = Wind;
     windSpeedCont.append(windSpeedImg, windSpeedLabel);
 
     removeExistingElements(dataEl);

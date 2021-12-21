@@ -18,6 +18,7 @@ body {
   background: #15155c;
   color: #fff;
   text-align: center;
+  height: 100%;
 }
 .form-container {
   display: flex;
@@ -119,8 +120,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   color: #151922;
+  margin-top: -30px;
 }
 .forecast-box {
   display: flex;
@@ -138,9 +140,9 @@ h2 {
   min-width: 150px;
 }
 .footer {
+  position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
   width: 100vw;
   background-color: #28282b;
   color: #fff;
@@ -156,10 +158,17 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  .form-container {
+    margin-left: -30px;
+  }
   .data-container {
     display: flex;
     flex-direction: column;
     margin-top: -10px;
+    margin-left: -20px;
     gap: 5px;
   }
   .city {
@@ -171,8 +180,8 @@ h2 {
     right: -10px;
   }
   .weather-icon img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 150px;
   }
   .primary-data {
     margin-top: -10px;
@@ -183,14 +192,17 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 12px;
-    min-width: 600px;
+    font-size: 10px;
+    gap: 30px;
+  }
+  .secondary-data h2 {
+    margin-left: -1px;
   }
   .temperature img,
   .humidity img,
   .wind-speed img {
-    max-width: 45px;
-    max-height: 45px;
+    max-width: 40px;
+    max-height: 40px;
   }
   .forecast {
     display: flex;
@@ -198,12 +210,16 @@ h2 {
     justify-content: unset;
     overflow-x: auto;
     flex-wrap: nowrap;
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .forecast .loader {
     margin: 0 auto;
   }
   .forecast-box {
     flex: 0 0 auto;
+  }
+  .forecast-box img {
+    min-height: 100px;
+    min-width: 100px;
   }
 }

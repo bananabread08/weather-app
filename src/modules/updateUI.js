@@ -31,16 +31,12 @@ const removeExistingElements = (element) => {
 const createElements = (main_data, forecast, mode) => {
   if (mode) {
     const dataEl = document.querySelector('.data-container');
-
     const primaryEl = document.createElement('div');
     primaryEl.classList.add('primary-data');
     const secondaryEl = document.createElement('div');
     secondaryEl.classList.add('secondary-data');
-
-    const city = document.createElement('h1');
-    city.classList.add('city');
-    const country = document.createElement('h1');
-    country.classList.add('country');
+    const location = document.createElement('h1');
+    location.classList.add('location');
     const iconEl = document.createElement('p');
     iconEl.classList.add('weather-icon');
     const img = document.createElement('img');
@@ -51,7 +47,6 @@ const createElements = (main_data, forecast, mode) => {
     const tempImg = document.createElement('img');
     tempImg.src = Thermometer;
     temperatureCont.append(tempImg, tempLabel);
-
     //humidity
     const humidityCont = document.createElement('div');
     humidityCont.classList.add('humidity');
@@ -59,7 +54,6 @@ const createElements = (main_data, forecast, mode) => {
     const humidityImg = document.createElement('img');
     humidityImg.src = Droplet;
     humidityCont.append(humidityImg, humidityLabel);
-
     //windspeed
     const windSpeedCont = document.createElement('div');
     windSpeedCont.classList.add('wind-speed');
@@ -71,10 +65,9 @@ const createElements = (main_data, forecast, mode) => {
     removeExistingElements(dataEl);
     removeExistingElements(iconEl);
     iconEl.append(img);
-    primaryEl.append(city, country, iconEl);
+    primaryEl.append(iconEl, location);
     secondaryEl.append(temperatureCont, humidityCont, windSpeedCont);
-    city.textContent = main_data.city;
-    country.textContent = main_data.country;
+    location.textContent = main_data.city + ', ' + main_data.country;
     tempLabel.textContent = forecast.current.temp + ' K';
     humidityLabel.textContent = forecast.current.humidity + '%';
     windSpeedLabel.textContent = forecast.current.wind_speed + ' kph';

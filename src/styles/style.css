@@ -28,6 +28,9 @@ body {
   align-items: center;
   width: auto;
 }
+form {
+  z-index: 1;
+}
 
 #search-item {
   margin-left: -40px;
